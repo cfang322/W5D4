@@ -10,11 +10,12 @@
 #
 class Enrollment < ApplicationRecord
     has_many :students, 
-        primary_key: :id,        #user.id
-        foreign_key: :student_id,#enrollment.student_id 
+        primary_key: :id,         #user.id
+        foreign_key: :student_id, #enrollment.student_id 
         class_name: :User
-    has_many :course,
+
+    has_many :courses,
         primary_key: :id,        #course.id 
         foreign_key: :course_id, #enrollment.course_id 
-        class_name: 'Course'
+        class_name: :Course
 end
