@@ -10,5 +10,8 @@
 #  updated_at    :datetime         not null
 #
 class Course < ApplicationRecord
-    
+    belongs_to :prerequisite,
+        primary_key: :id,
+        foreign_key: :prereq_id,
+        class_name: :Course 
 end
